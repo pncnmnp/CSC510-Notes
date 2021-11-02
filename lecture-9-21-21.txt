@@ -1,0 +1,62 @@
+Roadmap is important - use projects to clearly show the Roadmap
+If you havent finished coding - you are behind
+
+= = = = =
+On prem - on premises - monolithic
+Cloud
+
+What is the same about Cloud and On prem?
+Server being hosted somewhere physically - there is a datacenter which is hosting it somewhere
+Code remains the same - major changes are in the way code is deployed - NOT REALLY! - what about parallelism
+(Erlang - something smaller than threads - threads die quickly - INTERESTING!)
+
+What is different about X or Y
+On prem - the company has to own and maintain it
+Cloud - no such overhead
+
+On cloud is easier to scale
+
+Cost - on the basis of compute time
+Cost - purchase hardware/ compute cost/ maintainance cost/ license purchasing
+
+Software - with cloud you do not need to install software - they can bundle it for you - like NCSU's VCL (Virtual Computing Lab (VCL))
+
+When should a software project select X versus Y?
+Cloud:
+Budget: AWS or other cloud providers are relatively cheaper than the On prem
+
+On prem:
+Security - jurisdiction - like some countries do not allow financial data to leave the country - so than On prem is the only option
+backup and storage - to keep a safe OFFLINE backup locally in case something happens to their code on cloud
+
+how to monitor and check if the selected item turns out to be not working?
+On prem - hardware monitors
+Cloud - status page and a small on prem server whose entire point is to just check if the cloud is working or not
+= = = = =
+
+serverless - contains whats just needed for runtime
+
+Testing - some exploration excercise - we are trying to find some structure in the code
+
+Blackbox - you cannot look inside your code - Like a surgeon who has stethoscope and thermometer
+test on the borderline - you can cluster the data and look at the borders
+
+You can cluster in the input and output space - take a sample from each cluster
+
+All pair testing - do something, do something different, do something different than your first 2 tries, go on and on
+It is a way of saying - dont do something twice - find different parts of the input space
+How do 1/2/3 things fails at the same system? It checks whether 2 or more things failed AT THE SAME TIME
+All pair testing - checks if two things fail at the same time
+(Interesting) - Looks a lot like Greedy Trees
+
+NASA - would run a simulation of the actual system at different speeds - 10x, 30x, 50x faster - to simulate when the real system might fail
+
+Pairwise testing is good
+
+Researchers:
+model - expectations - creating tests
+
+FSM - cover all the parts of the FSM using pair wise testing
+
+State coverage: every node coverage - this is the code coverage part!
+

@@ -1,0 +1,68 @@
+All men are mortal
+Socrates is a man, therefore he is mortal
+
+At what point can we stop that?
+We can use astraction and stop.
+
+Taking useful abstractions, forgeting bad abstractions, and building on those
+    When Codd proposed relational databases, a cell can only be a date/number/string/BLOB
+    He abstracted all these database out of these SQL keywords - all the database operations we are doing can be abstracted to these columns on these tables
+    People said it was too slow - then NYSE improved it for trading activities
+
+    When Codd got things down to 7-8 keywords:
+        We reduced the things to optimize and test
+
+
+Language "self" - had fewer operations - selfless class - it had less to optimize - so it was fast
+
+LLVM, Pandoc - example of abstraction
+
+Abstraction in scheduling - we need to move the hardware computation between different hardwares - you take the namespace of OS - you slice it - all the namespaces are completely isolated from each other
+Portability - add path names - os.sep in python - to work on linux and windows - abstraction!
+".." is an abstraction in every language - interestingly "Lua" does not have this
+
+Pipes
+= = = = =
+Pipes - I want to spit things out - so programs can be connected by big old pipes - he came out with program format - using ASCII! - it reads from ASCII file and write back to ASCII files
+Doug McIlroy
+
+Interesting! - UNIX does not lot of errors - errors do not get written to standard output, they get written to standard error
+
+Pipes were build for the social structure at bell labs to work - lots of little tiny tools written by lots of people - plug and play
+
+Used with pipes
+> nroff     is a text formatter (old version of latex)
+> lp        is the line printer
+> col       handles escape sequences that sets up text in 2 columns
+> tbl       is an nroff pre-processor that expresses tables in terms of lower-level nroff commands
+> eqn       is an nroff pre-processor that expresses equations in terms of lower-level nroff commands
+
+First time to use UNIX - it was tempting for the prof to pipe stuff and store them in the .bashrc file
+
+pipe internally was a double buffer - SEE MORE! INTERESTING!
+They have concurrency issues - what about Y connectors? like 2 things connecting 2 things out (A monad is a programmable semicolon - like "AND")
+
+OO Class Hierarchies
+= = = = =
+We have abstraction called "Mammal" that doesnt exist - just has properties for the animals inside
+Smalltalk: (FASCINATING!) Everything in smalltalk was an instance of something - including class - which had a metaclass ClassDescription - which itself had a meta class
+
+Random was kind of string in smalltalk
+
+The classes are not there to create anything - but store and modify functionality of the parent
+
+Collection is an abstract class - to store commanality of the sub classes
+
+READ FOR Thursday! - On the criteria to be used in decomposing systems into modules. David Parnas, 1971
+David Parnis was airforce's one of the best designers in 70s - gave us OOP - code up interface then work on the internals - so teams know how to communicate
+
+Macro
+= = = = =
+Rewrite code at runtime
+When you are manipulating macros in Julia - it actually manipulates the ASTs
+
+Queuing Theory
+= = = = =
+Better to have abstraction - 1 queue multiple servers is better than multiple queues for multiple servers
+Check out the RIOT paper - https://arxiv.org/pdf/1708.08127.pdf
+Insights on Queing theory - http://www.treewhimsy.com/TECPB/Articles/SevenInsights.pdf

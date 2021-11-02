@@ -1,0 +1,53 @@
+You are writing oftware that the rest of community can relate to
+Abstraction
+SE is a study of practical abstraction - we are studying migrate things on clouds, big level patterns
+Abstraction is what SE is!
+
+Cons of abstraction:
+Loss of information is possible with abstraction
+
+Least abstraction:
+Less flexibility
+Easier to understand
+
+LISP is a good example of abstraction - just lists and atoms
+Taking useful abstractions, forgeting bad abstractions, and building on those
+Grammar based fuzzing is an abstraction
+
+Abstraction can simplify testing
+
+LLVM (intermediate representation) is a great example of abstraction!
+
+Definition: Freedom from representational qualities
+
+the "who was if-the-else invented?" blog-post example
+
+Barbara Visco invented try-catch - abstractions
+
+IF you are testing something -
+    Abstraction reduces tests
+    we can test for the parent classes
+
+Logic Programming was impossible idea in 70s, today it is worth billions of dollars
+
+serverless systems - containers come with the whole system inside - suppose we dont need file systems - we dont need everything on the machine - serverless systems helps that
+
+Erlang - OS, Processes, Threads- erlang is a one process system (it deals with microthread) - it doesnt do block containment - Python is a block structured language - inside the method we can access the namespace of class and method
+Variables are scoped by semicolons - erlang is fantastic for parallelism - namespace is a tiny tiny thing
+
+Julia's macros are beautiful
+
+Why study abstractions?
+* Aesthetics
+* Innovation is "abstraction + tool support"
+* Simplicity - the underlying data structures use abstraction
+* Example: Mustache (like Jinja2) - Logic-less templates. - https://mustache.github.io/
+* Portability
+* Scheduling - how the cloud computing work?
+    * We want to jump around to tap the unused resources
+    * cloud has abstracted namespace
+
+Abstract - rule of 3:
+* Just be concrete
+* be concrete again, but make a little note
+* third time: "not you again? time to abstract!"

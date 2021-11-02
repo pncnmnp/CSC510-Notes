@@ -1,0 +1,81 @@
+waterfall model
+
+Scrum - stuff you want ot do - produces a backlog of tasks - once a month you look at backlog and say these are the stuff you need to give priority to
+        - continue this process again and again
+
+same - both methods of project development where they want to get stuff out
+opp - waterfall is one directional in nature
+        agile has a lot of iteration
+        waterfall - authority to change direction of software - people who formulate the requirements in the first phase
+
+when to  use - waterfall - when things are uni directional, people doing the same thing at the same time (doing requirements - everyone is doing that - I feel that it is a disadvantage)
+                DOD uses a lot of waterfall - like for aircraft carriers - build the infrastructure for them (as parts are coming from all around the world)
+                Once the shell is build, agile can be better as combat systems evolve
+                Ultimate Agile Story: During the desert storm, the soldiers had to be told that by the time they land, they had to connect their device with something in the Middle East
+        agile - helps to understand what to prioritize, 
+                deliver features quicker, 
+                products are constantly being tested that require an udate - consumer gets flexibility at every point in the SE process
+                When the requirements are not fixed
+                When you want to launch an MVP fast in the market
+                A lot of modern developers expect that they can add things of value to the software - sociological reason (Interesting!)
+
+When would agile go wrong - feature creep (so we want infrastructure to be put down in the early part, so that the other parts can be done significantly faster)
+                            when too many backlogs happen
+
+                            constantly changing requirements are proving expensive for the company! (Interesting point from a student)
+                            Prof answer - We never got the requirements right!
+
+When to select Agile - sprint - work on a feature and test it
+
+Conclusion - both good for different kinds of projects - we want to mix and match them (Very Interesting!)
+There are companies that use waterfall to build the infrastructure - then they flipped to Agile
+In safety critical world - there are legislative requirements as well - so waterfall might be useful
+
+"Software is not how we nail down the world, it is how we sail the world"
+
+What is Agile-Fall? People who are saying that you are doing Agile but are actually doing Agile-Fall 
+                    - like manager saying - "I want this to be done in this this time!" - no flexibility given to the software developers
+
+NYT times - COVID vaccination verification would be like? - some CEO (Interesting!)
+1. Want to respect privacy and securty
+2. System available when the network is down
+3. Not connected to medical system
+4. It should be verifiable - this would need a centralized database!
+
+When you want to do a design - put yourself in shoes of your user - the designs have to be culturally sensitive too! (what natural language would you choose for a tablet software in India?)
+
+Fuzzing - stochastic
+For a lot of security tests - fuzzing is better
+It does not provide a guarantee in the system
+Smarter kind of Fuzzing - create a grammar - do fuzzing using this grammar (Interesting!)
+    we can then start building test case coverage for the grammar as well! - 
+    we can visualize a grammar as a tree - we can then look like which parts of the tree are failing more!!!!! (Very Interesting!)
+
+Mutational fuzzing - Take a known valid input and mutate it! - start adding in wrong stuff - see what happens!
+
+to build a grammar - (1) take a library of good grammars, (2) probability to weigh sub trees, (3) stochastic recursive descent
+
+"At some point - testing stops become testing - TESTING BECOMES AN OPTIMIZATION PROCESS" - Prof.
+
+Metamorphic testing - high level test - like when in SQL we do "select * from Table A" and "select * from Table A where XYZ" 
+                        here the latter should be strictly less than or equal to the first one's number of outputs
+
+White box testing -
+Very Interesting - we can use symbolic exection (Python - module `ctree`)
+
+BigFuzz (VERY INTERESTING!) - test for static data analysis -  Problem - lots of python scripts running over billions of lines of data
+What they did - they walked over the code using like symbolic execution - they found constraints - small number of path ways (like 30)
+So instead of testing billions of data points, they just run it through those path ways (only like few thousands of them)
+They were esentially testing what was currently in the codebase
+(Q. How is this different from pair wise testing? - ASK?)
+
+Formal Methods:
+the way to check if something holds everywhere - you check if it DOES NOT hold somewhere! - we need theorem provers (very old research on theorem provers)
+
+Prof. works on theorem provers for product lines - 2 years top research
+
+(Interesting case study!) AWS has theorem provers running for security stuff - they went through a config files - build a translator between theorem prover and config file 
+    - checking if the config file is not doing anything fishy! - further properties they found were not that complex in nature!
+
+For the PYCOSAT - something like "1 -5 4 0" - means Yes to 1, not to 5, yes to 4 (CHECK AGAIN!)
+

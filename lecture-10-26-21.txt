@@ -1,0 +1,92 @@
+Immutable state
+"immutable state" - Something that seems to be stupid for general programing languages, 
+                    but it's crazy, powerful for parallelism and verification.
+
+you call yourself recursively - function with a, a+1, and so on
+To do this trick - "call yourself recursively!" - we need tail call optimization
+https://eklitzke.org/how-tail-call-optimization-works
+
+What happens in python if we call recursively around 100 levels?
+It booms - standard python - we put another function activation on the stack
+
+Why immutable objects? - consistency
+With "immutable" we cna say like - "this must be true" or "A is an integer" or "A is a list string"
+verification is easier in languages that have this property
+
+Go
+Garbage Collection
+supports garbage collection (C doesn't)
+In C when you want to grab memory, it is malloc(), when you want to free it it is free() (it is famous for its memory leaks)
+Garbage collection is the process of never having to free()
+There's a demon that watches the memory of the space
+* Go supports distributed garbage collection
+* Very fast to compile (Interesting!)
+    when they did profiling on C compilation, they found certain tiny files being loaded from disk 10000 times
+    They changed the memory module of Go:
+        So when Go compiles a file - it does everything with a disk
+        Also, it generates enough info - like a symbol table
+        so when something else asks for that file, it doesn't have to go back to recompile that disk
+        They build like a transitive closure of the symbol space
+
+Lisp
+Supports different types for same function (like multiple dispatch - similar as one seen in Julia)
+You don't have to write separate get and set methods - 
+    get(): goes to memory to get something - returns with it the data and a pointer to that memory location
+    set(): just uses that same memory location and writes something back
+    So usually in LISP we dont have to write a set method
+
+Difference between multiple dispatch and function overloading?
+https://softwareengineering.stackexchange.com/questions/125084/multiple-dispatch-vs-function-overloading
+
+McCarthy's contribution - Prof. Menzies's take:
+Like artists might study Mona Lisa, architects might study Frank Lloyd Wright,
+computer scientists should take a very big cup of coffee and 
+read recursive functions as symbolic expressions and their computation by machine (LISP)
+
+Basic primitives (6 of them) of LISP:
+In all of LISP, we've got cons and atoms - we can build recursive structures from these
+* equality (eq)
+    car - pull the head 
+    cdr - pull the rest
+* can you put things together (cons)
+    cons takes two things and returns a bucket containing the thing and the other thing
+* go this way or that way (cond) - branch the reasoning
+    like (cond (if1 do1) (if2 do2) ..... )
+
+History on car and cdr:
+car - contents of the address register
+cdr - contents of the decrement register
+
+In Burrows' 60 - when they first implemented LISP,
+we had to have lists of things, where the 
+head in the address register and tail in decrement register
+
+Lambda is an abstraction on a function
+(alonzo church - he asked "what is computation?" - he gave lambda calculus)
+
+((lambda (p1 p2 p3..) e) a1 a2 a3...)
+arguments (a1, a2, a3) leap across the lambda body (p1, p2, p3) - called "binding"
+then evaluates e
+
+"environments" in LISP - is a set of pairs and bindings
+'((p1 a1) (p2 a2) ....)
+
+How is recursion done in LISP?
+* When enter a lambda body, we add parameter arguments to the left hand side:
+    ((p1 a1) (p2 a2) (p3 a3) (a 1) (b 2) ...)
+* Look up local values left to right, local recursive variables shadow parent variables
+    So now we can do recursion!
+
+If we want to define recursion in traditional stack oriented language from a cast from von Neumann Memo 1948,
+it's incredibly more complicated
+
+Coffeescript is a nice transpiler for javascript
+Issue with transpilers: debugging is difficult
+
+In early days, C++ was a transpiler that transpiled into C
+
+Moonscript (another transpiler) for Lua
+
+Quote from lecture:
+"Software engineering is the hunt for useful abstractions and the hunt hasn't finished yet.
+And I'm sure you folks will find more great ones."

@@ -1,0 +1,51 @@
+height of the common manager depends on which teams has more bugs - for large organizations - having distributed development with
+a central manager can work well
+
+Python vs C
+What is the same about X and Y
+> A lot of their underlying code is in C - Cython is also available, which translates a Python script into C and makes direct C-level API calls into the Python interpreter.
+> They both support procedural programming paradigm
+
+What is different about X or Y
+> One is interpreted and another is compiled
+> Different ways to compile C - gcc and clang (and different standard library implementations) however one standard library and one formal way to execute Python code
+> Dynamic type checking in Python but C has static type checking
+> No pointers (python) and no native support for garbage collection
+
+When should a software project select X versus Y?
+> Scientific computing - Python - Scipy, Numpy, Scikit-Learn, NLTK, Tensorflow
+> Operating Systems and Embedded systems - C
+> More fine grained memory management control - C
+> Speed - C
+> Readability - Python
+
+If a projects does (X or Y), how to monitor and check if the selected item turns out to be not working?
+> Speed issues even after using Python profilers followed by debugging - C wrappers can then be used
+> Readability is difficult and not performing any OS or embedded systems tasks - maybe Python
+
+Orginial internet - was made survivable - so they wanted a distributed system
+Garbage collection for LISP machines in 70s - turn off the machine and turn on again! :)
+Go has distributed garbage collection
+C is a constant in our life
+NASA had a distributed testing environment - if something goes wrong in NASA system - everyone knows about it - because it blows
+After Apollo - separate testing building - inside a distributed environment - if code was built from reusable stuff - they would increase the test size (larger team - different than what ine would do)
+
+All Pair Testing - we are dealing with 2 variables at a time
+
+Testing - Random + Domain Knowledge Testing
+
+Any solution to the dependencies is a valid configuration problem - idea behind the theorem prover
+We can generate solutions and then start scoring the solutions to get which ones are best
+If we start scoring the clusters, show people a small sample to ask what they think - we cannot show them more solutions - BECAUSE THERE ARE TO MANY!
+
+Scale up SAT solvers - similar to my crossword solver method! - TALK?
+
+Scale up TDD - LexisNexis, and Google does NOT RECORD line numbers - they have a lot of hand waving
+They are using domain knowledge about the code instead of line numbers
+
+Best predictor for bug - where was the last bug - bugs are social animals - they live together
+
+But what about safety critical applications?
+- Demand vastly simpler code
+- Tested using vastly longer testing cycles
+- Test generated via a very thorough requirements process.

@@ -1,0 +1,126 @@
+Issues associated with software analytics
+
+What is software 2.0?
+In Software 1.0, most things are done manually
+In Software 2.0, some things are given to an optimizer
+    e.g. how to configure the makefile so we get maximum network flow or minimum energy
+
+you're doing these experiments where you're changing the makefile, recompiling the system, running it, 
+and there are tools called optimizers that help you do that en masse
+
+Optimizing is difficult - there are often competing constraints (you want to do X but Y hinders you from doing it perfectly) 
+Therefore, we are dealing with discontinous space
+
+Current work: DUO - data mining using/used by optimizers
+
+Some things can be done automatically, some require human judgement
+AI is a buffet of options - successful combination of the tools, still requires human expertise
+
+Programmers are important
+programing is about feedback on ideas
+programmers are the people who can decide what to code or what not to code
+half the job of the programmer is deciding what not to code!
+
+Technical debt
+technical dead is when you ship a piece of code and there's a line as a comment in the code saying 
+    "I really should turn this linear time search into a logarithmic one, 
+    otherwise you will get too slow to scale. 
+    But I don't have time right now"
+It is like the dirt that accumulates in the cogs of the machine
+somewhere down the track, you have to spend time and money fixing that up
+
+Story (Programmers == Trust):
+Prof. Menzies changed his phone carrier, because he was not convinced that the support staff was helping them (even after waiting for an hour)
+"Programmers are the people we turn to when our program screws up!"
+"Programmers are the people that give you trust that if something goes wrong and I can't fix it, someone else can."
+Is this what is fundamentally wrong with Google's support team? - ASK?
+
+Programmers manage the organizational impact
+Story:
+Prof. Menzies worked at NASA for a testing unit that no one wanted because they weren't launching rockets (/s).
+They were the backroom boys shaking software. And in the 10 years he worked, this unit was run from Washington, in Los Angeles, and somewhere else.
+They kept moving
+And every time they moved, there was a change in policy, 
+                            a change in databases,
+                            a change in data collection, 
+                            a change in the contractual way they spoke to the people writing the software
+They were the ones that coped with that change.
+
+Joke:
+if you're trying to attract venture capitalists, you're doing AI 
+if you're trying to hire someone, you're doing machine learning.
+If you're actually in production, you're doing linear regression.
+
+Prof. Menzies' grad student who interned at Google:
+He was burning through three years of CPU per day for his image processing work
+
+Quote from lecture:
+"People rush too fast to the most complicated, 
+they rush too fast to the most simple, 
+and they avoid all the lessons we've learned in the middle."
+
+Complaint: SE about AI is not an SE's task!
+Reply: Times change
+Initially it was said that SE was not about users (Dijkstra, 79),
+                                            testing (Mills, 85)
+                                            requirements (Paulk, 93)
+                                            deployment (before CI)
+But, AI software is still software - it needs maintenance, validation, interfacing, usability, additions
+
+Interesting!
+In Delaware, it's legal to use certain software packages to decide a sentence of someone who's guilty in that world
+
+Data Mining
+Data mining is finding patterns from data (asks the question - What is?)
+
+Optimization
+Is finding trends and taking a ladder and walking up that trend (asks the questions - What to do?)
+
+Under hood, data miners are optimizers and optimizers are data miners
+Simple case: take the data you have mined, how do you want to split it? Into 2 (high depth) or some N parts (low depth)?
+How to find the Kth nearest neighbour for your data? What is K? All these are control parameters! This stuff requires optimization
+
+both of these - optimizers and data miners 
+are trying to learn a space, but a data miner takes a pair of scissors and cuts up the space and says this is X and that is Y
+and then it tries to glue the region and say that this is ahead
+
+Pareto optimization
+A single observation can wipe out a vast space of possibilities
+
+Parameters:
+* A rule that's perfect on recall can be very bad on false alarm.
+    if 19 people - all classified as australians, but only 1 australian - 100% recall but bad on false alarm!
+* Therefore, when building learners for SE systems:
+    We want to make as few mistakes as possible - minimize the false alarm
+    And, we want to maximize the recall
+
+Data miners in the corpus (ordered in terms of popularity - study around 2017):
+* Decision tree
+* SVM
+* Instance based
+* Ensemble
+* Deep Learning
+
+Optimizers controlling data miners (ordered in terms of popularity - study around 2017):
+* Genetic algorithms
+* Differential Evolution
+* NSGA2
+* Particle Swarm Optimization
+* GP
+* SWAY
+* Tabu Search
+* MOEAs
+* FLASH
+
+Prof. advice and warning:
+* Learn like 5-6 optimizers
+* "Now, my warning to you is that as your career progresses, yes, you have to learn Python and Rust and typescript and AWS, et cetera
+    but you also have to learn genetic algorithms and differential evolution and all the rest.
+    These are words you're gonna be hearing about more and more"
+* Start with differential evolution - it is relatively simple and effective!
+
+When in doubt, for data miners helping optimizers:
+divide the problem and apply deep learning to each one
+
+Always ask - is X data miner better than Y based on default or tuned parameters?
+Tuning is very important!

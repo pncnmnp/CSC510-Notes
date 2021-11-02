@@ -1,0 +1,53 @@
+Ted Nelson - Project Xanadu - maggieappleton.com/xanadu-patterns - mind blowing
+
+https://greg4cr.github.io/
+
+Peope were linking strange websites - reuse website source
+
+Ted Nelson's idea of the internet -
+What we want is an overlay tech - any page you can put comment on - every page can be connected - you can put notes on that paper
+
+Dont use AI tools of the shelf - they might not be tuned for your kind of data - for example -
+using AI models in SE purposes works better when the data is sort of an SE corpus rather than something from UCI data
+https://arxiv.org/1912.04061 - the paper that describes this
+
+SE looks like low-dimensional data is more important
+
+"bugs are social animals" - where to find most bugs - look at where the previous bugs were found
+
+V diagram - expectations of what to do - that is what verticle lines are for
+
+check out what "@go" decorator does in testing - python!
+
+Testing -
+Red = fund a broken test
+Green= fix the test
+Refactor= sometimes, clean things up
+
+Refactor is important as we dont want to be stuck into a local maxima
+
+TDD assumes that test happens faster manner - not true - Google tooks like 2 weeks for testing
+Then test prioritization strategies came into picture
+
+As tests became more than the code - code coverage becomes difficult - usually code coverage is like 65% for really large codebases
+
+"As tests became more than the code" - how big do you want to fit the universe, a box bigger than the universe
+
+TDD is a way to structure cood - it is not a rigorous 100% guarantee thing
+
+If Fortran was for engineers, COBAL (Grace Hooper) was for industry
+Y2K - was a real push to recode COBAL - we have this massive COBAL systems
+NLP to reverse engineer COBAL to some other language - sounds a lot like traspilation!!!!!
+
+Testing is a requirements problem
+How do you test Juno?
+
+Who do you test for? How do you check if it is maintainable?
+
+LexisNexis wanted to build a model to understand when spikes would come - as rare events - could not be done this way
+So they "used non-parametric methods that divide the data into chunks, then reasons separately about each chunk"
+
+Safety critical system -
+make a simple system
+testing is absolutely expensive in this systems - start with something that will produce a testable system
+Use specialized systems that do these things efficiently.

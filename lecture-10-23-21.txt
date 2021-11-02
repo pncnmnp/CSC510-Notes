@@ -1,0 +1,106 @@
+Advantages of pipes - scheduling - parallelize them - create input output queues
+
+Monads:
+If you think about a program with a statement, semicolon, statement, semicolon, a monad is a programable semicolon.
+It controls the activity in between each statement.
+Conditionals - AND can be a monad
+Story: Microsoft built a shell that was monad based - but it was too complicated
+
+Unix pipe is not a fully programable construct.
+It's only one input, one output.
+There is no Y connectors - like 2 things connecting 2 things out
+
+Lesson for abstraction from the Microsoft story:
+"don't do too complicated your abstractions, otherwise you lose your audience."
+
+Nice Menzies quote:
+"There's a rule of thumb in publishing. Every equation loses half your audience.
+Every level of abstraction loses half your program programmers."
+
+How to create abstractions in Python?
+One way - build abstract classes - class with no instances
+Why to build one? - It is a place to share stuff
+
+Compilers have abstractions - AST - abstract syntax tree
+
+LLVM is a programmable compiler
+
+The David Panis Story:
+
+Panis and Reagan
+In 1984, President Ronald Reagan decided he wasn't going to have nuclear missiles landing on American soil and he created the Star Wars program.
+And the idea was he would use laser beams, literally laser beams floating in space to take out missiles coming in from the from Russia.
+So no missiles would land on American soil. Ground based reactors on all the time.
+When a missile was detected, these ground based reactors would use microwave relays to send up into space gigawatts of power.
+This power will be caught by a satellite that would in turn use it and fire a laser beam and take out the the bad guys coming in.
+it's very bad shooting lasers through atmosphere.
+They get distorted. You have to catch the missile at the height of its trajectory, which is only a few minutes.
+So it had to be automated
+In 1985, a guy called David Panis said, this is bogus, I am out of here
+He was one of the top software engineers in United States.
+
+Panis proposed:
+https://blog.acolyer.org/2016/09/05/on-the-criteria-to-be-used-in-decomposing-systems-into-modules/
+First we build an interface and then we build the internals - used in OOP principles
+
+Problems in piping - you have to pass control or meta information down along with the data
+
+Argument:
+Data persist for longer than programs - what we do things to is more of a constant than what we do
+And so the way we used to say we do object oriented design is we take a procedural system and take every data container and ask what operations have to go in for that?
+And we take a pair of scissors and cut up the whole design so that all the different data containers are around and would add into every data container the operations that are just put into it.
+
+Very Interesting:
+If you structure your design around data types not their function types, you'll get a better design!
+(functional programming people would disagree with that)
+
+Julia design model:
+* Julia is an attempt to generate a programing language that looks like Python, but runs like C
+    like the official line is that "Python is slow" - scalability issues
+* Julia is written from the ground up to be fast - an incremental compiler with front end to LLVM - generating very fast byte code
+* Julia has no inheritance, it has multi methods
+* It is succinct - There's no beginning or end if statements.
+* No whitespaces
+* Take any two or more things that interact with each other and write a function and give all the variables a different type for those different things.
+    And and and Julia will grab what you've got and push it out to the right thing
+* The above point makes Julia "pure glue", you've got different types everywhere
+    you can make anything talk to anything else by specifying multiple types in the header
+* Can't create an object. But all functions are typed
+* Julia is a nice specification language
+    > Example from class
+    Always returns a sorted list
+    function all(i::Some)
+        i._all = i.ok ? i._all : sort(i._all)
+        i.ok = true
+        i._all = end
+
+Interesting!
+* designed for parallelism, which means that the arguments are typically not mutable.
+    For example:
+    If we have a=1 and then a=2, well it will throw an error
+    It expects you to increment stuff using a function - wherein we can parallelize this function!
+* Instructor: Julia command line is slow
+* Package management is a joy
+* Array indexes start with 1
+
+Prolog design: Every Prolog, every rule. The lexical scope of that rule is in that rule and nowhere else.
+Prolog is a natural for passing information between variables and terrible for writing things down to disk and keeping RAM information concurrent to this information.
+    If you want to say - send someone curses - Prolog would be a perfect language - as when it finishes - all the memory is gone - no persistence
+
+Ericsson took Prolog through some rubbish away, added some other tricks from telecommunications.
+And now this abstraction idea of logic, programing of having a name that is only local to a statement is now literally
+sweeping the world and was the basis of a 19 billion dollar acquisition (Whatsapp).
+
+Menzies quote:
+Industry = Innovation = abstraction + tool support
+
+Serverless is great for deployment and has issues with debugging and configuration - AWS Lambda
+
+Containers:
+If OS is a big abstraction and macros are tiny abstraction, in the middle we have containers
+Containers divide up the space - there is a physical machine, and you're putting into it lots of little slices
+
+Interesting!
+"A container is a division of the namespace of the operating system"
+and it's such a fundamental low level that no container can talk to its neighbor in a container.
+Migration and restarts get easier
